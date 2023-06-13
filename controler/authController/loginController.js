@@ -14,7 +14,7 @@ let loginController = async (req, res) => {
     return res.json({ error: "Password is required" });
   } else {
     const existingUser = await Users.find({ email });
-    // existingUser[0].email.includes(email) another way to search in elemnt in array of object
+    // existingUser[0].email.includes(email) //another way to search in elemnt in array of object
 
     if (existingUser[0].email.includes(email)) {
       bcrypt.compare(
