@@ -1,5 +1,5 @@
 const Category = require("../../models/categoryModels.js");
-const SubCategory = require("../../models/subCategoryModels.js");
+const SubCategory= require("../../models/subCategoryModels.js")
 
 const createCategoryCotroller = async (req, res) => {
   const { name, description } = req.body;
@@ -43,24 +43,25 @@ const catStatusUpdateCotroller = async (req, res) => {
 };
 
 const createSubCategoryController = async (req, res) => {
-  const { name, description } = req.body;
+  const { name, description, category } = req.body;
+  console.log(name, description, "category is  ==> , ", category);
   if (!name) {
     return res.json({ error: "Sub category name is required" });
   }
-  let existingSubCategory = await SubCategory({ name });
+  let existingSubCategory = await SubCategory.find({ name });
   if (existingSubCategory.length > 0) {
     return res.json({ error: "Sub category is already exists. Try another" });
   }
   let subCategory = new SubCategory({
     name,
     description,
+    category,
   });
   subCategory.save();
   res.json({ success: "Sub category is successfully Created" });
 };
 const subCateStatusController = async (req, res) => {
-  const { name, status } = req.body;
-  let existingSubCategory = await SubCategory.findOneAndUpdate({ name });
+   const { name, status } = req.body;
   if (status == "rejected" || status == "waiting") {
     let existingSubCategory = await SubCategory.findOneAndUpdate(
       { name },
