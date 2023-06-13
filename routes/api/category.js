@@ -1,8 +1,11 @@
 const express = require( "express" );
 const _ = express.Router();
-const { createCategoryCotroller } = require( "../../controler/category/category" );
+const { createCategoryCotroller, catStatusUpdateCotroller, createSubCategoryController, subCateStatusController } = require( "../../controler/category/category" );
 
-_.use("/createcategory", createCategoryCotroller)
+_.post("/createcategory", createCategoryCotroller)
+_.post("/statuscategory", catStatusUpdateCotroller)
+_.post("/subcategory", createSubCategoryController)
+_.post("/statussubcategory", subCateStatusController)
 
 
 
