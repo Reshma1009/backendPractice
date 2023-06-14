@@ -3,5 +3,5 @@ let _ = express.Router();
 let registation= require("./auth.js")
 let category= require("./category.js")
 _.use("/auth", registation);
-_.use(category);
+_.use("/category",category);
 module.exports = _;
