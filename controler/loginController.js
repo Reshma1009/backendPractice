@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 
-const Users = require("../../models/userModels.js");
-const validateEmail = require("../../helpers/emailValidation.js");
+const Users = require("../models/userModels.js");
+const validateEmail = require("../helpers/emailValidation.js");
 
 let loginController = async (req, res) => {
   const { email, password } = req.body;

@@ -1,9 +1,9 @@
 const bcrypt = require("bcrypt");
 
-const Users = require("../../models/userModels.js");
-const validateEmail = require("../../helpers/emailValidation.js");
-const emailverification = require("../../helpers/emailVerification.js");
-const otp = require("../../helpers/token.js");
+const Users = require("../models/userModels.js");
+const validateEmail = require("../helpers/emailValidation.js");
+const emailverification = require("../helpers/emailVerification.js");
+const otp = require("../helpers/token.js");
 const aleaRNGFactory = require("number-generator/lib/aleaRNGFactory");
 
 let registationController = async (req, res) => {

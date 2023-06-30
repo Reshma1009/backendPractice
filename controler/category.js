@@ -1,5 +1,5 @@
-const Category = require("../../models/categoryModels.js");
-const SubCategory = require("../../models/subCategoryModels.js");
+const Category = require("../models/categoryModels.js");
+const SubCategory = require("../models/subCategoryModels.js");
 
 const createCategoryCotroller = async (req, res) => {
   const { name, description } = req.body;

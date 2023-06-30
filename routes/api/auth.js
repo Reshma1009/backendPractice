@@ -1,10 +1,12 @@
 const express = require("express");
 let _ = express.Router();
 // import from controllers
-const registationController = require( "../../controler/authController/registationControllers" );
-const loginController = require( "../../controler/authController/loginController" );
-const emailVerificationOptMatch = require( "../../controler/authController/emailVerificationOtpMatch" );
-const { becomeMerchantController } = require( "../../controler/authController/becomeMechantController" );
+const registationController = require("../../controler/registationControllers");
+const loginController = require("../../controler/loginController");
+const emailVerificationOptMatch = require("../../controler/emailVerificationOtpMatch");
+const {
+  becomeMerchantController,
+} = require("../../controler/mechantController");
 
 // start create route
 _.post("/registation", registationController);
